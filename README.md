@@ -17,4 +17,5 @@ Rhythmize is a web-based, music themed video game. If you have a love for music 
 - Friday Night Funkin' 
 - Bemuse 
 - Rhythm Plus
+- Rhythm Heaven 
 
