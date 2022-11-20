@@ -4,14 +4,18 @@ Rhythmize is a web-based, music themed video game. If you have a love for music 
 
 # How to play
 
+
 # Game Play 
+
 
 # Built With
 
 
 # Contributers 
+Baileigh Brown
 
 # Contact 
+
 
 ## Influences
 - Friday Night Funkin' 
