@@ -5,6 +5,34 @@ const path = require('path');
 //mongoose creates the connection with the database 
 const mongoose = require('mongoose');
 
+//definig port number
+const PORT = process.env.PORT || 8080;
+
+//cors allows sharing, cross origin resource requests || get info from different url 
+const cors = require('cors');
+require('dotenv').config();
+
+//register the routes with
+// register the routes
+app.use("/api/auth", authRoutes);
+
+//deployment 
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
+}
+app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+    )
+);
+
+//middleware , express.json parses incoming JSON requests and puts the parsed data in req.body bc u are sending data. think about a twitter post
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cors());
+
+const server = http.createServer(app);
 
 //connecting to mongo atlas database, if connects successfully it will console listen on port 
 mongoose.connect(process.env.MONGO_URI)
